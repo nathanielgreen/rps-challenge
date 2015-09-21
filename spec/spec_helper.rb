@@ -12,5 +12,3 @@ Coveralls.wear!
 require 'byebug'
 require 'capybara/rspec'
 require 'capybara'
-
-Capybara.app = RPSWeb

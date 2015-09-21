@@ -1,5 +1,5 @@
-<body background="http://i.imgur.com/mtW4Th6.jpg" height="1000px" width="1600px">
-<div style="text-align: center; color:white; font-family:Arial">
+<body background="http://i.imgur.com/mtW4Th6.jpg" height="1080px" width="1920px">
+<div style="text-align: center; color:white; font-family:Heavyweight, Arial; font-size:20">
 
   <% if @visitor=="" %>
     Submit your name before you enter the ring!
@@ -30,7 +30,7 @@
   <% end %>
 </div>
 
-<div style="text-align: center; padding: 50px; color: white; font-family:Arial">
+<div style="text-align: center; padding: 50px; color: white; font-family: Heavyweight, Arial; font-size: 20">
   <% $game.play @choice_1 if @choice_1 %>
   <% if $game.player_win?(@choice_1) %>
   <audio autoplay loop>
@@ -46,6 +46,10 @@
       </form>
 
   <% elsif $game.player_lose?(@choice_1) %>
+  <audio autoplay loop>
+    <source src="/music/sadviolin.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
     YOU LOSE! You chose <%= @choice_1 %> and your opponent chose <%= $game.opponent_play_lose(@choice_1) %>!
       <form style="padding: 20px">
@@ -53,6 +57,10 @@
       </form>
 
   <% elsif $game.player_draw?(@choice_1) %>
+  <audio autoplay loop>
+    <source src="/music/crowdoh.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
     IT'S A DRAW! You and your opponent both chose <%= @choice_1 %>!
       <form style="padding: 20px">
